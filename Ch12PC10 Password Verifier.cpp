@@ -1,3 +1,7 @@
+// Password must be atleast 6 characters long
+//Contain atleast on uppercase and one lowercase letter
+//Password must have atleast one digit
+//Program should tell user why password no accepted, for example Password must contain atleast one digit
 #include <iostream>
 
 using namespace std;
