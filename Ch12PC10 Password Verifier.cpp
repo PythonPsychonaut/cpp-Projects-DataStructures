@@ -20,3 +20,32 @@ else {
     cout << "Password accepted!";
 };
 }
+
+
+
+
+//Test
+#include <iostream>
+#include <string>
+#include <locale>
+#include <sstream>
+
+using namespace std;
+
+int main() {
+locale loc;
+string userPasswd;
+string str = "fffgrtefe44";
+
+cout << "Enter your password: " << endl;
+cin >> userPasswd;
+
+if (isdigit(str[0],loc))
+{
+    cout << "***Your password must have atleast SIX characters!***" << endl;
+}
+else {
+    cout << "Password accepted!";
+};
+}
+//
