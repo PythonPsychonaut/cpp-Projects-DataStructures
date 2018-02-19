@@ -11,10 +11,10 @@ int countConsonants(char *);
 int main()
 {
 	char List[Length],
-		 choice;		// Holds menu user input.
+		 choice;		
 
 
-	// Ask the user to enter a string
+	
 	cout << "Enter a string of no more than "
 		 << Length-1 << " characters:\n";
 	cin.getline(List, Length);
