@@ -1,51 +1,37 @@
-// Password must be atleast 6 characters long
-//Contain atleast on uppercase and one lowercase letter
-//Password must have atleast one digit
-//Program should tell user why password no accepted, for example Password must contain atleast one digit
 #include <iostream>
-
 using namespace std;
 
-int main() {
-string userPasswd;
+bool verifyPassword(string a) {
+	bool hasUpper = false, hasNumber = false; // declare both false to prevent logic issues
+	if(a.length() < 6) {
+		return false;
+	}
 
-cout << "Enter your password: " << endl;
-cin >> userPasswd;
+	for(int i = 0; i < a.length(); ++i) {
+		if(isupper(a[i])) {
+			hasUpper = true;
+		}
+		if(isdigit(a[i])) {
+			hasNumber = true;
+		}
+	}
 
-if (userPasswd.length() < 6)
+    if(hasUpper == true && hasNumber == true) {
+        return true;
+    }
+	return false;
+}
+
+
+int main()
 {
-    cout << "***Your password must have atleast SIX characters!***" << endl;
+    
+    string a;
+    cout << "Enter your password: " << endl;
+    cin >> a;
+    cout << verifyPassword(a) << endl;
+	
+	
+    // 0 is False
+    //1 is True
 }
-else {
-    cout << "Password accepted!";
-};
-}
-
-
-
-
-//Test
-#include <iostream>
-#include <string>
-#include <locale>
-#include <sstream>
-
-using namespace std;
-
-int main() {
-locale loc;
-string userPasswd;
-string str = "fffgrtefe44";
-
-cout << "Enter your password: " << endl;
-cin >> userPasswd;
-
-if (isdigit(str[0],loc))
-{
-    cout << "***Your password must have atleast SIX characters!***" << endl;
-}
-else {
-    cout << "Password accepted!";
-};
-}
-//
