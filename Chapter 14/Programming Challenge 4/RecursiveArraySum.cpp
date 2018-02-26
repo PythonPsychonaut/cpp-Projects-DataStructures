@@ -13,7 +13,7 @@ int main()
 	cout << "How many figures do you wish to add? ";
 	cin  >> size;
 
-	array = new int[size]; // Allocate memory.
+	array = new int[size]; 
 
 	cout << "Enter each of the figures to sum:\n";
 	for (int i = 0; i < size; i++)
