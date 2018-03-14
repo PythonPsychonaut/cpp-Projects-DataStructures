@@ -1,1 +1,30 @@
-Give a pseudocode algorithm for comparing two files to see if their contents are identical.
+//Give a pseudocode algorithm for comparing two files to see if their contents are identical.
+
+//Edit 
+
+    ifstream lFile(lFilePath.c_str(), std::ios::in | std::ios::binary);
+    ifstream rFile(rFilePath.c_str(), std::ios::in | std::ios::binary);
+
+
+    if(!lFile.good() || !rFile.good())
+    {
+        return false;
+    }
+
+    streamsize lReadBytesCount = 0;
+    streamsize rReadBytesCount = 0;
+
+    do {
+        lFile.read(p_lBuffer, *bufferSize);
+        rFile.read(p_rBuffer, *bufferSize);
+        lReadBytesCount = lFile.gcount();
+        rReadBytesCount = rFile.gcount();
+
+        if (lReadBytesCount != rReadBytesCount || std::memcmp(p_lBuffer, p_rBuffer, lReadBytesCount) != 0)
+        {
+            return false;
+        }
+    } while (lFile.good() || rFile.good());
+
+    return true;
+}
